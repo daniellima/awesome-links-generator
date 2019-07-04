@@ -34,7 +34,7 @@ module.exports = class PocketClient {
             else if (article.given_title !== "") {
                 title = article.given_title
             }
-            return new Article(title, article.resolved_url)
+            return new Article(title, article.given_url)
         })
             
         return articles
