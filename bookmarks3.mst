@@ -1,0 +1,9 @@
+<H3>{{{ name }}}</H3>
+<DL>
+    {{#dirs}}
+        {{>bookmarks3}}
+    {{/dirs}}
+    {{#files}}
+    <A HREF="{{{ url }}}">{{{ name }}}</A>
+    {{/files}}
+</DL>
