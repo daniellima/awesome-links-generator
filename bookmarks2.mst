@@ -1,0 +1,8 @@
+{{#tags}}
+<H3>{{{ name }}}</H3>
+<DL>
+    {{#links}}
+    <A HREF="{{{ href }}}">{{{ description }}}</A>
+    {{/links}}
+</DL>
+{{/tags}}
