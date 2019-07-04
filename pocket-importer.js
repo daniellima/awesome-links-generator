@@ -1,11 +1,8 @@
 const superagent = require("superagent")
-const _ = require('lodash')
-const util = require('util')
-
-
 const cli = require('./cli')
 const PocketAuthenticator = require('./pocket-authenticator')
 const PocketClient = require('./pocket-client')
+const generateChromeBookmarks = require('./generate-chrome-bookmarks')
 
 async function main() {
 
@@ -22,10 +19,11 @@ async function main() {
 
     const pocketClient = new PocketClient(superagent, consumerKey, accessToken)
 
-    const links = await pocketClient.getAllPinnedArticles()
+    const articles = await pocketClient.getAllPinnedArticles()
 
-    console.log(_.values(links).length)
-    console.log(_.filter(links, article => article.status === '1').length)
+    await generateChromeBookmarks(articles, './bookmarks.html')
+
+    console.log(`${articles.length} bookmarks saved to bookmarks.html`)
 }
 
 

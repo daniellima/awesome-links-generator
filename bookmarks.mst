@@ -1,0 +1,6 @@
+<H3>{{ folderName }}</H3>
+<DL>
+    {{#articles}}
+    <A HREF="{{{ url }}}">{{{ name }}}</A>
+    {{/articles}}
+</DL>
