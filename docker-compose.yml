@@ -1,0 +1,9 @@
+version: '3'
+services:
+  app:
+    build: .
+    environment: 
+        - POCKET_CONSUMER_KEY
+        - POCKET_ACCESS_TOKEN
+    volumes:
+        - .:/app
