@@ -19,7 +19,7 @@ async function main() {
 
     const pocketClient = new PocketClient(superagent, consumerKey, accessToken)
 
-    const articles = await pocketClient.getAllPinnedArticles()
+    const articles = await pocketClient.getArticlesByTag('inbox')
 
     await generateChromeBookmarks(articles, './bookmarks.html')
 

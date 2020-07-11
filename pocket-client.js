@@ -8,14 +8,14 @@ module.exports = class PocketClient {
         this.accessToken = accessToken
     }
 
-    async getAllPinnedArticles() {
+    async getArticlesByTag(tag_name) {
         const response = await this.client
             .get('https://getpocket.com/v3/get')
             .send({
                 'consumer_key': this.consumerKey,
                 'access_token': this.accessToken,
                 'state': 'all',
-                'tag': 'pinned',
+                'tag': tag_name,
                 'sort': 'newest',
                 'detailType': 'simple'
             })
